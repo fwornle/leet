@@ -1,0 +1,95 @@
+/* ---------- Complexity badges ----------
+   Usage: <span class="cx time">O(n)</span> <span class="cx space">O(1)</span> */
+:root {
+  --cx-time: #3949ab;
+  --cx-space: #00897b;
+  --cell-bg: #eef1fb;
+  --cell-border: #9fa8da;
+  --cell-hi: #ffca28;
+  --cell-win: #a5d6a7;
+  --cell-dim: #e0e0e0;
+  --cell-text: #1a1a2e;
+}
+[data-md-color-scheme="slate"] {
+  --cx-time: #7986cb;
+  --cx-space: #4db6ac;
+  --cell-bg: #2b2f45;
+  --cell-border: #5c6bc0;
+  --cell-hi: #c79100;
+  --cell-win: #2e7d32;
+  --cell-dim: #3a3a3a;
+  --cell-text: #eceff1;
+}
+
+.cx {
+  display: inline-block;
+  padding: 0.1em 0.6em;
+  border-radius: 1em;
+  font-family: var(--md-code-font-family);
+  font-size: 0.8em;
+  font-weight: 700;
+  color: #fff;
+  white-space: nowrap;
+}
+.cx.time  { background: var(--cx-time); }
+.cx.space { background: var(--cx-space); }
+.cx.time::before  { content: "⏱ time "; font-weight: 400; opacity: 0.85; }
+.cx.space::before { content: "▦ space "; font-weight: 400; opacity: 0.85; }
+
+/* ---------- Array strips ----------
+   Usage:
+   <div class="arr">
+     <span>1</span><span class="hi">2</span><span class="win">3</span>
+   </div>
+   Optional pointer labels row:
+   <div class="arr ptr"><span>L</span><span></span><span>R</span></div> */
+.arr {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  margin: 0.6em 0;
+  font-family: var(--md-code-font-family);
+}
+.arr > span {
+  min-width: 2.4em;
+  padding: 0.35em 0.4em;
+  text-align: center;
+  border: 2px solid var(--cell-border);
+  border-radius: 6px;
+  background: var(--cell-bg);
+  color: var(--cell-text);
+  font-weight: 600;
+}
+.arr > span.hi  { background: var(--cell-hi); border-color: var(--cell-hi); color: #1a1a2e; }
+.arr > span.win { background: var(--cell-win); border-color: var(--cell-win); }
+.arr > span.dim { background: var(--cell-dim); border-color: var(--cell-dim); opacity: 0.6; }
+.arr.ptr { margin-top: -0.4em; }
+/* Same box metrics as value cells so labels stay aligned under them */
+.arr.ptr > span {
+  border-color: transparent;
+  background: none;
+  padding-top: 0;
+  padding-bottom: 0;
+  max-width: 2.4em;
+  white-space: nowrap;
+  overflow: visible;
+  color: var(--md-accent-fg-color);
+}
+.arr-label {
+  font-size: 0.75em;
+  opacity: 0.7;
+  margin-bottom: -0.3em;
+}
+
+/* ---------- Pattern header card ---------- */
+.pattern-card {
+  border-left: 4px solid var(--md-primary-fg-color);
+  padding: 0.6em 1em;
+  margin: 1em 0;
+  background: var(--md-code-bg-color);
+  border-radius: 4px;
+}
+.pattern-card p { margin: 0.3em 0; }
+
+/* Keep mermaid diagrams centred and readable */
+.mermaid { text-align: center; }

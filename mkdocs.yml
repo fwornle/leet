@@ -1,0 +1,115 @@
+site_name: LeetCode Patterns
+site_description: The 15 essential LeetCode patterns in Python — recognise them, picture them, know their complexity. Learnable in 2–3 hours.
+site_url: https://fwornle.github.io/leet/
+repo_url: https://github.com/fwornle/leet
+repo_name: fwornle/leet
+
+docs_dir: docs
+use_directory_urls: false
+
+theme:
+  name: material
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: indigo
+      accent: amber
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: indigo
+      accent: amber
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - navigation.top
+    - navigation.footer
+    - navigation.indexes
+    - search.suggest
+    - search.highlight
+    - content.code.copy
+    - content.code.annotate
+    - content.tabs.link
+  icon:
+    repo: fontawesome/brands/github
+
+plugins:
+  - search
+  - minify:
+      minify_html: true
+
+extra_css:
+  - stylesheets/extra.css
+
+markdown_extensions:
+  - admonition
+  - pymdownx.details
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets:
+      base_path: ["."]
+      check_paths: true
+      dedent_subsections: true
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.arithmatex:
+      generic: true
+  - tables
+  - attr_list
+  - md_in_html
+  - def_list
+  - toc:
+      permalink: true
+
+nav:
+  - Home:
+    - index.md
+    - Study Plan (2–3 h): study-plan.md
+  - Complexity:
+    - Big-O in 15 Minutes: complexity/big-o-primer.md
+    - Pattern → Complexity Map: complexity/pattern-complexity-map.md
+  - Patterns:
+    - patterns/index.md
+    - Arrays & Strings:
+      - 1 · Prefix Sum: patterns/prefix-sum.md
+      - 2 · Two Pointers: patterns/two-pointers.md
+      - 3 · Sliding Window: patterns/sliding-window.md
+    - Linked Lists:
+      - 4 · Fast & Slow Pointers: patterns/fast-slow-pointers.md
+      - 5 · In-place Reversal: patterns/linked-list-reversal.md
+    - Stacks & Heaps:
+      - 6 · Monotonic Stack: patterns/monotonic-stack.md
+      - 7 · Top-K Elements: patterns/top-k-elements.md
+    - Intervals & Search:
+      - 8 · Overlapping Intervals: patterns/overlapping-intervals.md
+      - 9 · Modified Binary Search: patterns/modified-binary-search.md
+    - Trees & Graphs:
+      - 10 · Binary Tree Traversal: patterns/binary-tree-traversal.md
+      - 11 · Depth-First Search: patterns/depth-first-search.md
+      - 12 · Breadth-First Search: patterns/breadth-first-search.md
+      - 13 · Matrix Traversal: patterns/matrix-traversal.md
+    - Search Spaces:
+      - 14 · Backtracking: patterns/backtracking.md
+      - 15 · Dynamic Programming: patterns/dynamic-programming.md
+  - Recall:
+    - Which Pattern? (Decision Tree): which-pattern.md
+    - One-Page Cheatsheet: cheatsheet.md
+
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/fwornle/leet
